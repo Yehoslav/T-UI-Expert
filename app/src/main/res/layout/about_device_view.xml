@@ -4,7 +4,8 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv0"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -14,7 +15,8 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical" />
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv1"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -24,7 +26,8 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical" />
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv2"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -34,7 +37,8 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical" />
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv3"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -44,7 +48,8 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical" />
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv4"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -54,7 +59,8 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical" />
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv5"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -64,7 +70,8 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical" />
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv6"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -74,7 +81,8 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical" />
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv7"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"
@@ -84,7 +92,18 @@
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbars="vertical" />
 
-    <ohi.andre.consolelauncher.tuils.OutlineTextView android:id="@+id/tv8"
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:clickable="true"
+
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbars="vertical" />
+    <de.reckendrees.systems.tui.expert.tuils.OutlineTextView
+        android:id="@+id/tv9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:focusable="true"

@@ -6,7 +6,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "ohi.andre.consolelauncher"
+        applicationId "de.reckendrees.systems.tui.expert"
 
         minSdkVersion 14
         targetSdkVersion 27

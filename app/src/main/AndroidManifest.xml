@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ohi.andre.consolelauncher">
+    package="de.reckendrees.systems.tui.expert">
 
     <supports-screens
         android:anyDensity="true"
@@ -81,7 +81,7 @@
         android:theme="@style/Custom.Solid">
 
         <provider
-            android:name=".tuils.GenericFileProvider"
+            android:name="de.reckendrees.systems.tui.expert.tuils.GenericFileProvider"
             android:authorities="${applicationId}.FILE_PROVIDER"
             android:exported="false"
             android:grantUriPermissions="true">
@@ -91,7 +91,7 @@
         </provider>
 
         <activity
-            android:name=".LauncherActivity"
+            android:name="de.reckendrees.systems.tui.expert.LauncherActivity"
             android:clearTaskOnLaunch="true"
             android:configChanges="keyboardHidden|orientation|screenSize|keyboard|navigation"
             android:enabled="true"
@@ -112,7 +112,7 @@
         </activity>
 
         <receiver
-            android:name=".tuils.stuff.PolicyReceiver"
+            android:name="de.reckendrees.systems.tui.expert.tuils.stuff.PolicyReceiver"
             android:description="@string/admin_permission"
             android:permission="android.permission.BIND_DEVICE_ADMIN">
             <meta-data
@@ -126,16 +126,16 @@
         </receiver>
 
         <service
-            android:name=".managers.notifications.KeeperService"
+            android:name="de.reckendrees.systems.tui.expert.managers.notifications.KeeperService"
             android:enabled="true"
             android:exported="false" />
         <service
-            android:name=".managers.music.MusicService"
+            android:name="de.reckendrees.systems.tui.expert.managers.music.MusicService"
             android:enabled="true"
             android:exported="true" />
 
         <activity
-            android:name=".commands.tuixt.TuixtActivity"
+            android:name="de.reckendrees.systems.tui.expert.commands.tuixt.TuixtActivity"
             android:excludeFromRecents="true"
             android:label="@string/tuixt_label"
             android:noHistory="true"
@@ -143,7 +143,7 @@
             android:windowSoftInputMode="stateAlwaysVisible|adjustResize">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".LauncherActivity" />
+                android:value="de.reckendrees.systems.tui.expert.LauncherActivity" />
 
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -217,17 +217,17 @@
         </activity>
 
         <service
-            android:name=".managers.notifications.NotificationService"
+            android:name="de.reckendrees.systems.tui.expert.managers.notifications.NotificationService"
             android:label="@string/notification_reader"
             android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE">
             <intent-filter>
                 <action android:name="android.service.notification.NotificationListenerService" />
             </intent-filter>
         </service>
-        <service android:name=".managers.notifications.NotificationMonitorService" />
+        <service android:name="de.reckendrees.systems.tui.expert.managers.notifications.NotificationMonitorService" />
 
         <activity
-            android:name=".tuils.stuff.FakeLauncherActivity"
+            android:name="de.reckendrees.systems.tui.expert.tuils.stuff.FakeLauncherActivity"
             android:enabled="false">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
