@@ -13,6 +13,7 @@ After that i will try to add bigger features that need more work.
 
 ### custom command output:
 your command is executed periodically, the output is printed to the top of the terminal!
+
 commands:
 - `config -set custom_command wget -qO- wttr.in/your_city_name\?0T`
 - `config -set custom_command_timeout 60000`(currently means refresh after 60s)
