@@ -30,7 +30,7 @@ public enum Ui implements XMLPrefsSave {
     custom_command_timeout{
         @Override
         public String defaultValue() {
-            return "60000";
+            return "60";
         }
 
         @Override
@@ -40,7 +40,7 @@ public enum Ui implements XMLPrefsSave {
 
         @Override
         public String info() {
-            return "Define how often(in ms) the command is executed";
+            return "Define how often(in seconds) the command is executed";
         }
     },
     show_enter_button {
@@ -187,7 +187,7 @@ public enum Ui implements XMLPrefsSave {
             return "Notes size";
         }
     },
-    command1_size{
+    custom_command_size{
         @Override
         public String defaultValue() {
             return "13";
@@ -331,7 +331,7 @@ public enum Ui implements XMLPrefsSave {
             return "If false, the notes label will be hidden";
         }
     },
-    show_command1 {
+    show_custom_command {
         @Override
         public String defaultValue() {
             return "true";
@@ -344,7 +344,7 @@ public enum Ui implements XMLPrefsSave {
 
         @Override
         public String info() {
-            return "If false, the command1 output will be hidden";
+            return "If false, the custom command output will be hidden";
         }
     },
     enable_battery_status {
@@ -555,7 +555,7 @@ public enum Ui implements XMLPrefsSave {
             return "This is used to order the labels on top of the screen";
         }
     },
-    command1_index {
+    custom_command_index {
         @Override
         public String defaultValue() {
             return "7";
