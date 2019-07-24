@@ -1,5 +1,7 @@
 <resources>
-
+    <!-- tui-expert strings-->
+    <string name="output_kill">App killed</string>
+    <string name="help_kill">Force close an app</string>
     <!-- various text -->
     <string name="app_name">T-UI Expert</string>
     <string name="location_off">Turn on GPS</string>
