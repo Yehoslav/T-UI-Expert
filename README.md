@@ -1,4 +1,9 @@
 # T-UI Expert
+
+Telegram:
+* [discussion group](https://t.me/t_ui_dev)
+* [update channel](https://t.me/tui_expert_updates)
+
 ### this is a fork of [T-UI](https://github.com/fAndreuzzi/TUI-ConsoleLauncher).
 
 The first release will mostly fix "bugs" or misbehaviour.
