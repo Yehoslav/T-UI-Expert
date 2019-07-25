@@ -16,4 +16,8 @@ your command is executed periodically, the output is printed to the top of the t
 
 commands:
 - `config -set custom_command wget -qO- wttr.in/your_city_name\?0T`
-- `config -set custom_command_timeout 60000`(currently means refresh after 60s)
+- `config -set custom_command_timeout 60`(refresh every 60s)
+
+
+### kill command:
+instantly close apps by, just type kill!
