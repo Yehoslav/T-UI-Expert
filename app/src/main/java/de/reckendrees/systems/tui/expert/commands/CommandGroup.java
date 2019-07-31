@@ -11,6 +11,10 @@ import java.util.Iterator;
 import java.util.List;
 
 import de.reckendrees.systems.tui.expert.commands.main.specific.APICommand;
+import de.reckendrees.systems.tui.expert.commands.main.specific.APIRootCommand;
+import de.reckendrees.systems.tui.expert.commands.main.specific.RootCommand;
+import de.reckendrees.systems.tui.expert.managers.xml.XMLPrefsManager;
+import de.reckendrees.systems.tui.expert.managers.xml.options.Expert;
 import de.reckendrees.systems.tui.expert.tuils.Tuils;
 
 public class CommandGroup {
@@ -31,10 +35,11 @@ public class CommandGroup {
 
         List<CommandAbstraction> cmdAbs = new ArrayList<>();
         Iterator<String> iterator = cmds.iterator();
+        Boolean use_root = XMLPrefsManager.getBoolean(Expert.use_root);
         while (iterator.hasNext()) {
             String s = iterator.next();
             CommandAbstraction ca = buildCommand(s);
-            if(ca != null && ( !(ca instanceof APICommand) || ((APICommand) ca).willWorkOn(Build.VERSION.SDK_INT))) {
+            if(ca != null && ( !(ca instanceof APIRootCommand) || ((APIRootCommand) ca).willWorkOn(Build.VERSION.SDK_INT)) &&( !(ca instanceof APICommand) || ((APICommand) ca).willWorkOn(Build.VERSION.SDK_INT)) && (use_root || !(ca instanceof RootCommand))) {
                 cmdAbs.add(ca);
             } else {
                 iterator.remove();

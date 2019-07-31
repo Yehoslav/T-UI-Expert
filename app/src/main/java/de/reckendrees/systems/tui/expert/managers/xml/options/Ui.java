@@ -11,38 +11,6 @@ import de.reckendrees.systems.tui.expert.managers.xml.classes.XMLPrefsSave;
  */
 
 public enum Ui implements XMLPrefsSave {
-    custom_command{
-        @Override
-        public String defaultValue() {
-            return "wget -qO- wttr.in/dortmund\\?0T";
-        }
-
-        @Override
-        public String type() {
-            return XMLPrefsSave.TEXT;
-        }
-
-        @Override
-        public String info() {
-            return "Set custom command, which output is shown on the screen";
-        }
-    },
-    custom_command_timeout{
-        @Override
-        public String defaultValue() {
-            return "60";
-        }
-
-        @Override
-        public String type() {
-            return XMLPrefsSave.INTEGER;
-        }
-
-        @Override
-        public String info() {
-            return "Define how often(in seconds) the command is executed";
-        }
-    },
     show_enter_button {
         @Override
         public String defaultValue() {
@@ -187,22 +155,6 @@ public enum Ui implements XMLPrefsSave {
             return "Notes size";
         }
     },
-    custom_command_size{
-        @Override
-        public String defaultValue() {
-            return "13";
-        }
-
-        @Override
-        public String type() {
-            return XMLPrefsSave.INTEGER;
-        }
-
-        @Override
-        public String info() {
-            return "Command1 size";
-        }
-    },
     input_output_size {
         @Override
         public String defaultValue() {
@@ -329,22 +281,6 @@ public enum Ui implements XMLPrefsSave {
         @Override
         public String info() {
             return "If false, the notes label will be hidden";
-        }
-    },
-    show_custom_command {
-        @Override
-        public String defaultValue() {
-            return "true";
-        }
-
-        @Override
-        public String type() {
-            return XMLPrefsSave.BOOLEAN;
-        }
-
-        @Override
-        public String info() {
-            return "If false, the custom command output will be hidden";
         }
     },
     enable_battery_status {
@@ -543,22 +479,6 @@ public enum Ui implements XMLPrefsSave {
         @Override
         public String defaultValue() {
             return "6";
-        }
-
-        @Override
-        public String type() {
-            return XMLPrefsSave.INTEGER;
-        }
-
-        @Override
-        public String info() {
-            return "This is used to order the labels on top of the screen";
-        }
-    },
-    custom_command_index {
-        @Override
-        public String defaultValue() {
-            return "7";
         }
 
         @Override

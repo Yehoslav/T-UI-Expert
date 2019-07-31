@@ -10,17 +10,22 @@ import de.reckendrees.systems.tui.expert.commands.CommandAbstraction;
 import de.reckendrees.systems.tui.expert.commands.ExecutePack;
 import de.reckendrees.systems.tui.expert.commands.main.MainPack;
 import de.reckendrees.systems.tui.expert.commands.main.specific.APICommand;
+import de.reckendrees.systems.tui.expert.commands.main.specific.APIRootCommand;
+import de.reckendrees.systems.tui.expert.commands.main.specific.RootCommand;
+import de.reckendrees.systems.tui.expert.managers.xml.XMLPrefsManager;
+import de.reckendrees.systems.tui.expert.managers.xml.options.Expert;
+import de.reckendrees.systems.tui.expert.tuils.libsuperuser.Shell;
 
 /**
  * Created by andre on 03/12/15.
  */
-public class airplane implements APICommand, CommandAbstraction {
+public class airplane implements CommandAbstraction, APIRootCommand {
 
     @Override
     public String exec(ExecutePack pack) {
         MainPack info = (MainPack) pack;
+        boolean isEnabled = isEnabled(info.context);
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            boolean isEnabled = isEnabled(info.context);
             Settings.System.putInt(info.context.getContentResolver(), Settings.System.AIRPLANE_MODE_ON, isEnabled ? 0 : 1);
 
             Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
@@ -28,8 +33,12 @@ public class airplane implements APICommand, CommandAbstraction {
             info.context.sendBroadcast(intent);
 
             return info.res.getString(R.string.output_airplane) + !isEnabled;
+        }else{
+            String command = "settings put global airplane_mode_on 1 && am broadcast -a android.intent.action.AIRPLANE_MODE --ez state true";
+            if(isEnabled){command = "settings put global airplane_mode_on 0 && am broadcast -a android.intent.action.AIRPLANE_MODE --ez state false";}
+            Shell.SU.run(command);
+            return info.res.getString(R.string.output_airplane) + !isEnabled;
         }
-        return null;
     }
 
     private boolean isEnabled(Context context) {
@@ -63,6 +72,8 @@ public class airplane implements APICommand, CommandAbstraction {
 
     @Override
     public boolean willWorkOn(int api) {
-        return api < Build.VERSION_CODES.JELLY_BEAN_MR1;
+        if (api < Build.VERSION_CODES.JELLY_BEAN_MR1){ return true;}
+        if(XMLPrefsManager.getBoolean(Expert.use_root)){return true;}
+        return false;
     }
 }

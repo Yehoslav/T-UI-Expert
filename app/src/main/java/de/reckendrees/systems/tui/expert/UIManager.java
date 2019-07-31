@@ -73,6 +73,7 @@ import de.reckendrees.systems.tui.expert.managers.xml.options.Suggestions;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Theme;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Toolbar;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Ui;
+import de.reckendrees.systems.tui.expert.managers.xml.options.Expert;
 import de.reckendrees.systems.tui.expert.tuils.AllowEqualsSequence;
 import de.reckendrees.systems.tui.expert.tuils.NetworkUtils;
 import de.reckendrees.systems.tui.expert.tuils.OutlineTextView;
@@ -167,16 +168,16 @@ public class UIManager implements OnTouchListener {
     //runnable for executing commands
     private CommandRunnable commandRunnable;
     private class CommandRunnable implements Runnable{
-        int updateTime = XMLPrefsManager.getInt(Ui.custom_command_timeout);
+        int updateTime = XMLPrefsManager.getInt(Expert.custom_command_timeout);
         OnCommandUpdate commandUpdate;
         public CommandRunnable(OnCommandUpdate newCommandUpdate){
             this.commandUpdate = newCommandUpdate;
         }
         @Override
         public void run(){
-            Log.d("TUI-E",XMLPrefsManager.getString(Ui.custom_command));
+            Log.d("TUI-E",XMLPrefsManager.getString(Expert.custom_command));
             getCommandOutputTask getCommandOutputTask = new getCommandOutputTask(this, commandUpdate);
-            getCommandOutputTask.execute(XMLPrefsManager.getString(Ui.custom_command));
+            getCommandOutputTask.execute(XMLPrefsManager.getString(Expert.custom_command));
         }
     }
 
@@ -184,7 +185,7 @@ public class UIManager implements OnTouchListener {
     private class CommandUpdate implements OnCommandUpdate{
         @Override
         public void update(String updateString, Runnable runnable){
-            int updateTime = XMLPrefsManager.getInt(Ui.custom_command_timeout);
+            int updateTime = XMLPrefsManager.getInt(Expert.custom_command_timeout);
             int stringColor;
             String colorString = XMLPrefsManager.getString(Theme.custom_command_color);
             if(colorString.startsWith("#")) {
@@ -1040,7 +1041,7 @@ public class UIManager implements OnTouchListener {
         labelSizes[Label.device.ordinal()] = XMLPrefsManager.getInt(Ui.device_size);
         labelSizes[Label.weather.ordinal()] = XMLPrefsManager.getInt(Ui.weather_size);
         labelSizes[Label.unlock.ordinal()] = XMLPrefsManager.getInt(Ui.unlock_size);
-        labelSizes[Label.custom_command.ordinal()] = XMLPrefsManager.getInt(Ui.custom_command_size);
+        labelSizes[Label.custom_command.ordinal()] = XMLPrefsManager.getInt(Expert.custom_command_size);
         labelViews = new TextView[] {
                 (TextView) rootView.findViewById(de.reckendrees.systems.tui.expert.R.id.tv0),
                 (TextView) rootView.findViewById(de.reckendrees.systems.tui.expert.R.id.tv1),
@@ -1064,7 +1065,7 @@ public class UIManager implements OnTouchListener {
         show[Label.storage.ordinal()] = XMLPrefsManager.getBoolean(Ui.show_storage_info);
         show[Label.weather.ordinal()] = XMLPrefsManager.getBoolean(Ui.show_weather);
         show[Label.unlock.ordinal()] = XMLPrefsManager.getBoolean(Ui.show_unlock_counter);
-        show[Label.custom_command.ordinal()] = XMLPrefsManager.getBoolean(Ui.show_custom_command);
+        show[Label.custom_command.ordinal()] = XMLPrefsManager.getBoolean(Expert.show_custom_command);
         float[] indexes = new float[Label.values().length];
         indexes[Label.notes.ordinal()] = show[Label.notes.ordinal()] ? XMLPrefsManager.getFloat(Ui.notes_index) : Integer.MAX_VALUE;
         indexes[Label.ram.ordinal()] = show[Label.ram.ordinal()] ? XMLPrefsManager.getFloat(Ui.ram_index) : Integer.MAX_VALUE;
@@ -1075,7 +1076,7 @@ public class UIManager implements OnTouchListener {
         indexes[Label.storage.ordinal()] = show[Label.storage.ordinal()] ? XMLPrefsManager.getFloat(Ui.storage_index) : Integer.MAX_VALUE;
         indexes[Label.weather.ordinal()] = show[Label.weather.ordinal()] ? XMLPrefsManager.getFloat(Ui.weather_index) : Integer.MAX_VALUE;
         indexes[Label.unlock.ordinal()] = show[Label.unlock.ordinal()] ? XMLPrefsManager.getFloat(Ui.unlock_index) : Integer.MAX_VALUE;
-        indexes[Label.custom_command.ordinal()] = show[Label.custom_command.ordinal()] ? XMLPrefsManager.getFloat(Ui.custom_command_index) : Integer.MAX_VALUE;
+        indexes[Label.custom_command.ordinal()] = show[Label.custom_command.ordinal()] ? XMLPrefsManager.getFloat(Expert.custom_command_index) : Integer.MAX_VALUE;
         int[] statusLineAlignments = getListOfIntValues(XMLPrefsManager.get(Ui.status_lines_alignment), 9, -1);
 
         String[] statusLinesBgRectColors = getListOfStringValues(XMLPrefsManager.get(Theme.status_lines_bgrectcolor), 9, "#ff000000");
@@ -1819,7 +1820,12 @@ public class UIManager implements OnTouchListener {
         @Override
         protected void onPostExecute(String output) {
             Log.d("TUI-E",output);
-            commandUpdate.update(output,runnable);
+            try{
+                commandUpdate.update(output,runnable);
+            }catch(Exception e){
+                Log.e("TUI-E",e.toString());
+            }
+
         }
     }
 }

@@ -31,6 +31,7 @@ import de.reckendrees.systems.tui.expert.managers.xml.classes.XMLPrefsList;
 import de.reckendrees.systems.tui.expert.managers.xml.classes.XMLPrefsSave;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Behavior;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Cmd;
+import de.reckendrees.systems.tui.expert.managers.xml.options.Expert;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Suggestions;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Theme;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Toolbar;
@@ -54,6 +55,12 @@ public class XMLPrefsManager {
 
     public enum XMLPrefsRoot implements XMLPrefsElement {
 
+        EXPERT(Expert.values()){
+            @Override
+            public String[] delete() {
+                return new String[] {};
+            }
+        },
         THEME(Theme.values()) {
             @Override
             public String[] delete() {

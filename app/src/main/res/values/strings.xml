@@ -1,7 +1,21 @@
 <resources>
     <!-- tui-expert strings-->
     <string name="output_kill">App killed</string>
+    <string name="output_nfc">NFC active: </string>
     <string name="help_kill">Force close an app</string>
+    <string name="output_rotation">Rotation active: </string>
+    <string name="help_rotation">Toggle auto-rotation</string>
+    <string name="output_shutdown">(∩｀-´)⊃━☆ﾟ.*･｡ﾟ</string>
+    <string name="help_shutdown">Shutdown your phone</string>
+    <string name="output_reboot">(∩｀-´)⊃━☆ﾟ.*･｡ﾟ</string>
+    <string name="help_reboot">Reboot your phone</string>
+    <string name="output_reboot_recovery">(∩｀-´)⊃━☆ﾟ.*･｡ﾟ</string>
+    <string name="help_reboot_recovery">Reboot your phone into recovery mode</string>
+    <string name="output_battery">Battery saver active: </string>
+    <string name="help_battery">Toggle battery save</string>
+    <string name="output_cellular">Cellular active: </string>
+    <string name="help_cellular">Toggle cellular connection</string>
+    <string name="help_nfc">Toggle NFC</string>
     <!-- various text -->
     <string name="app_name">T-UI Expert</string>
     <string name="location_off">Turn on GPS</string>
