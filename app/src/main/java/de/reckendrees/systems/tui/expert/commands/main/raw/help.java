@@ -18,7 +18,7 @@ public class help implements CommandAbstraction, HideableCommand {
 
     @Override
     public boolean show(){
-        return XMLPrefsManager.getBoolean(Expert.hide_help);
+        return XMLPrefsManager.getBoolean(Expert.show_help);
     }
     @Override
     public String exec(ExecutePack pack) throws Exception {

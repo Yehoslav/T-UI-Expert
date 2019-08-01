@@ -22,7 +22,7 @@ public class call implements CommandAbstraction, HideableCommand {
 
     @Override
     public boolean show(){
-        return XMLPrefsManager.getBoolean(Expert.hide_call);
+        return XMLPrefsManager.getBoolean(Expert.show_call);
     }
     @Override
     public String exec(ExecutePack pack) {

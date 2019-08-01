@@ -6,26 +6,26 @@ import de.reckendrees.systems.tui.expert.managers.xml.classes.XMLPrefsSave;
 
 public enum Expert implements XMLPrefsSave {
 
-    hide_help{
+    show_help{
         @Override
         public String defaultValue() {
-            return "false";
+            return "true";
         }
 
         @Override
         public String info() {
-            return "Hide help button";
+            return "Show help button";
         }
     },
-    hide_call{
+    show_call{
         @Override
         public String defaultValue() {
-            return "false";
+            return "true";
         }
 
         @Override
         public String info() {
-            return "Hide call button";
+            return "Show call button";
         }
     },
     use_root{
