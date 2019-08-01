@@ -4,11 +4,8 @@ Telegram:
 * [discussion group](https://t.me/t_ui_dev)
 * [update channel](https://t.me/tui_expert_updates)
 
-### this is a fork of [T-UI](https://github.com/fAndreuzzi/TUI-ConsoleLauncher).
+<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/1.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
 
-The first release will mostly fix "bugs" or misbehaviour.
-I will also add settings for more customization.
-After that i will try to add bigger features that need more work.
 
 
 # [Download](https://github.com/v1nc/TUI-Expert/releases)
