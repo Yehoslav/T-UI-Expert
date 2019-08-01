@@ -18,6 +18,7 @@ import android.service.notification.NotificationListenerService;
 import android.service.notification.StatusBarNotification;
 import android.support.v4.app.NotificationCompat;
 import android.text.TextUtils;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.ConcurrentModificationException;
@@ -61,7 +62,7 @@ public class NotificationService extends NotificationListenerService {
 
     final String PKG = "%pkg", APP = "%app", NEWLINE = "%n";
     final Pattern timePattern = Pattern.compile("^%t[0-9]*$");
-
+    String lastNotString = "";//hotfix for double notification. hope someday the real bug gets fixed ^^
     PackageManager manager;
     ReplyManager replyManager;
     NotificationManager notificationManager;
@@ -250,12 +251,12 @@ public class NotificationService extends NotificationListenerService {
                                 Tuils.log(e);
                             }
 
-//                        Tuils.log("text", text);
-//                        Tuils.log("--------");
-
-                            Tuils.sendOutput(NotificationService.this.getApplicationContext(), s, TerminalManager.CATEGORY_NO_COLOR, click ? notification.contentIntent : null, longClick ? n : null);
-
-                            if(replyManager != null) replyManager.onNotification(sbn, s);
+                            //save last notification string and dont show if it equals the current. idk which causes this, but depending on that there could still be a bug, we will see.
+                            if(!s.toString().equals(lastNotString)){
+                                Tuils.sendOutput(NotificationService.this.getApplicationContext(), s, TerminalManager.CATEGORY_NO_COLOR, click ? notification.contentIntent : null, longClick ? n : null);
+                                lastNotString = s.toString();
+                                if(replyManager != null) replyManager.onNotification(sbn, s);
+                            }
                         }
                     }
 

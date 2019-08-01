@@ -6,6 +6,28 @@ import de.reckendrees.systems.tui.expert.managers.xml.classes.XMLPrefsSave;
 
 public enum Expert implements XMLPrefsSave {
 
+    hide_help{
+        @Override
+        public String defaultValue() {
+            return "false";
+        }
+
+        @Override
+        public String info() {
+            return "Hide help button";
+        }
+    },
+    hide_call{
+        @Override
+        public String defaultValue() {
+            return "false";
+        }
+
+        @Override
+        public String info() {
+            return "Hide call button";
+        }
+    },
     use_root{
         @Override
         public String defaultValue() {
@@ -17,7 +39,17 @@ public enum Expert implements XMLPrefsSave {
             return "Use root commands";
         }
     },
+    numbering_notes{
+        @Override
+        public String defaultValue() {
+            return "true";
+        }
 
+        @Override
+        public String info() {
+            return "Automatically list notes with numbers.";
+        }
+    },
     custom_command{
         @Override
         public String defaultValue() {

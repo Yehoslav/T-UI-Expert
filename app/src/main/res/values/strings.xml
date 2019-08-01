@@ -16,6 +16,8 @@
     <string name="output_cellular">Cellular active: </string>
     <string name="help_cellular">Toggle cellular connection</string>
     <string name="help_nfc">Toggle NFC</string>
+    <string name="help_sleep">Start a timer to shutdown your phone\n\'sleeptimer -s 10\' [shutdown in 10 mins]</string>
+    <string name="stop_sleep">Shutdown timer canceled</string>
     <!-- various text -->
     <string name="app_name">T-UI Expert</string>
     <string name="location_off">Turn on GPS</string>

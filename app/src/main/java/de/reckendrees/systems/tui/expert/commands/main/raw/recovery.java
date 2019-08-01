@@ -27,7 +27,7 @@ public class recovery implements CommandAbstraction, RootCommand {
 
     @Override
     public int priority() {
-        return 2;
+        return 1;
     }
 
     @Override

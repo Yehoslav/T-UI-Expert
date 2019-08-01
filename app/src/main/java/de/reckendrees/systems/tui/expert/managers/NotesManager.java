@@ -38,6 +38,7 @@ import de.reckendrees.systems.tui.expert.BuildConfig;
 import de.reckendrees.systems.tui.expert.R;
 import de.reckendrees.systems.tui.expert.managers.xml.XMLPrefsManager;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Behavior;
+import de.reckendrees.systems.tui.expert.managers.xml.options.Expert;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Theme;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Ui;
 import de.reckendrees.systems.tui.expert.tuils.LongClickableSpan;
@@ -271,8 +272,8 @@ public class NotesManager {
         CharSequence ns = Tuils.EMPTYSTRING;
         for(int j = 0; j < notes.size(); j++) {
             Note n = notes.get(j);
-
             CharSequence t = n.text;
+            if(XMLPrefsManager.getBoolean(Expert.numbering_notes)){ t = (j+1)+"."+t; }
             t = lockPattern.matcher(t).replaceAll(String.valueOf(n.lock));
             t = rowPattern.matcher(t).replaceAll(String.valueOf(j + 1));
             t = countPattern.matcher(t).replaceAll(String.valueOf(notes.size()));
@@ -355,10 +356,8 @@ public class NotesManager {
         hasChanged = false;
         return oldNotes;
     }
-
     private void addNote(String s, boolean lock) {
         long t = System.currentTimeMillis();
-
         notes.add(new Note(t, s, lock));
         Collections.sort(notes);
 

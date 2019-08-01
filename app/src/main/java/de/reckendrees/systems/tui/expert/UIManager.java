@@ -74,6 +74,7 @@ import de.reckendrees.systems.tui.expert.managers.xml.options.Theme;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Toolbar;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Ui;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Expert;
+import de.reckendrees.systems.tui.expert.tasks.getCommandOutputTask;
 import de.reckendrees.systems.tui.expert.tuils.AllowEqualsSequence;
 import de.reckendrees.systems.tui.expert.tuils.NetworkUtils;
 import de.reckendrees.systems.tui.expert.tuils.OutlineTextView;
@@ -82,6 +83,7 @@ import de.reckendrees.systems.tui.expert.tuils.interfaces.CommandExecuter;
 import de.reckendrees.systems.tui.expert.tuils.interfaces.OnBatteryUpdate;
 import de.reckendrees.systems.tui.expert.tuils.interfaces.OnCommandUpdate;
 import de.reckendrees.systems.tui.expert.tuils.interfaces.OnRedirectionListener;
+import de.reckendrees.systems.tui.expert.tuils.libsuperuser.Shell;
 import de.reckendrees.systems.tui.expert.tuils.stuff.PolicyReceiver;
 
 public class UIManager implements OnTouchListener {
@@ -1013,14 +1015,19 @@ public class UIManager implements OnTouchListener {
                     }
 
                     if(lockOnDbTap) {
-                        boolean admin = policy.isAdminActive(component);
+                        if(XMLPrefsManager.getBoolean(Expert.use_root)){
+                            Shell.SU.run("input keyevent 26");
+                        }else{
+                            boolean admin = policy.isAdminActive(component);
 
-                        if (!admin) {
-                            Intent i = Tuils.requestAdmin(component, mContext.getString(de.reckendrees.systems.tui.expert.R.string.admin_permission));
-                            mContext.startActivity(i);
-                        } else {
-                            policy.lockNow();
+                            if (!admin) {
+                                Intent i = Tuils.requestAdmin(component, mContext.getString(de.reckendrees.systems.tui.expert.R.string.admin_permission));
+                                mContext.startActivity(i);
+                            } else {
+                                policy.lockNow();
+                            }
                         }
+
                     }
 
                     return true;
@@ -1790,43 +1797,6 @@ public class UIManager implements OnTouchListener {
 
         updateText(Label.unlock, s);
     }
-    private class getCommandOutputTask extends AsyncTask<String, Integer, String> {
 
-        private Runnable runnable;
-        private OnCommandUpdate onCommandUpdate;
-        public getCommandOutputTask(Runnable ru, OnCommandUpdate newCommandUpdate){
-           runnable=ru;
-           onCommandUpdate = newCommandUpdate;
-        }
-        @Override
-        protected String doInBackground(String... commands) {
-            try {
-                Process process = Runtime.getRuntime().exec(commands[0]);
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(process.getInputStream()));
-                StringBuilder log = new StringBuilder();
-                String line;
-                while ((line = bufferedReader.readLine()) != null) {
-                    log.append(line + "\n");
-                }
-                Log.d("TUI-E",log.toString());
-                return log.toString();
-
-            } catch (IOException e) {
-                return "error";
-            }
-        }
-
-
-        @Override
-        protected void onPostExecute(String output) {
-            Log.d("TUI-E",output);
-            try{
-                commandUpdate.update(output,runnable);
-            }catch(Exception e){
-                Log.e("TUI-E",e.toString());
-            }
-
-        }
-    }
 }
 

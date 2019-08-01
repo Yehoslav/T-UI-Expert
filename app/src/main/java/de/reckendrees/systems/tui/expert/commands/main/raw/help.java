@@ -9,10 +9,17 @@ import de.reckendrees.systems.tui.expert.R;
 import de.reckendrees.systems.tui.expert.commands.CommandAbstraction;
 import de.reckendrees.systems.tui.expert.commands.ExecutePack;
 import de.reckendrees.systems.tui.expert.commands.main.MainPack;
+import de.reckendrees.systems.tui.expert.commands.main.specific.HideableCommand;
+import de.reckendrees.systems.tui.expert.managers.xml.XMLPrefsManager;
+import de.reckendrees.systems.tui.expert.managers.xml.options.Expert;
 import de.reckendrees.systems.tui.expert.tuils.Tuils;
 
-public class help implements CommandAbstraction {
+public class help implements CommandAbstraction, HideableCommand {
 
+    @Override
+    public boolean show(){
+        return XMLPrefsManager.getBoolean(Expert.hide_help);
+    }
     @Override
     public String exec(ExecutePack pack) throws Exception {
         MainPack info = (MainPack) pack;
