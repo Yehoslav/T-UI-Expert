@@ -32,7 +32,7 @@ public class sleeptimer extends ParamCommand {
 
                 st = new shutdownTask();
                 st.execute(pack.getInt());
-                return null;
+                return  pack.context.getString(R.string.start_sleep);
             }
 
             @Override

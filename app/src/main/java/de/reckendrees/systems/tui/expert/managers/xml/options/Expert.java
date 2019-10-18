@@ -31,7 +31,7 @@ public enum Expert implements XMLPrefsSave {
     use_root{
         @Override
         public String defaultValue() {
-            return "true";
+            return "false";
         }
 
         @Override
@@ -53,7 +53,7 @@ public enum Expert implements XMLPrefsSave {
     custom_command{
         @Override
         public String defaultValue() {
-            return "wget -qO- wttr.in/dortmund\\?0T";
+            return "curl -s http://wttr.in/dortmund\\?0T\\&lang=de";
         }
 
         @Override
@@ -124,7 +124,24 @@ public enum Expert implements XMLPrefsSave {
         public String info() {
             return "This is used to order the labels on top of the screen";
         }
+    },
+    termux_timeout{
+        @Override
+        public String defaultValue() {
+            return "300";
+        }
+
+        @Override
+        public String type() {
+            return XMLPrefsSave.INTEGER;
+        }
+
+        @Override
+        public String info() {
+            return "How much seconds to wait for a termux command output";
+        }
     };
+
 
     @Override
     public XMLPrefsElement parent() {

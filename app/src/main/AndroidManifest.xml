@@ -32,7 +32,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.WAKE_LOCK"  />
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
-
+    <uses-permission android:name="com.termux.permission.TERMUX_SERVICE"/>
     <permission
         android:name="android.permission.FLASHLIGHT"
         android:description="@string/help_flash"

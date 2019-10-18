@@ -18,6 +18,9 @@
     <string name="help_nfc">Toggle NFC</string>
     <string name="help_sleep">Start a timer to shutdown your phone\n\'sleeptimer -s 10\' [shutdown in 10 mins]</string>
     <string name="stop_sleep">Shutdown timer canceled</string>
+    <string name="start_sleep">Shutdown timer started</string>
+    <string name="termux_permissions">permission to launch termux commands is missing!</string>
+    <string name="help_termux">Execute a command in termux\nUsage:\n termux [command]</string>
     <!-- various text -->
     <string name="app_name">T-UI Expert</string>
     <string name="location_off">Turn on GPS</string>
@@ -109,7 +112,7 @@
 
 
     <string-array name="tutorial">
-        <item>Use the command \"help\" to get a list of available commands</item>
+        <item>Welcome to T-UI Expert(｡◕‿‿◕｡) use commands:\n\'expert\': learn about all features \n\'root\': enable root commands \n\'help\': get a list of available commands</item>
         <item>If you want to get info about the behavior of a command, type \"help cmdName\"</item>
         <item>Launch your apps typing their name</item>
         <item>You can call your contacts with the cmd \"call contactName\"</item>
