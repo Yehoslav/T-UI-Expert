@@ -19,22 +19,22 @@
     <string name="help_sleep">Start a timer to shutdown your phone\n\'sleeptimer -s 10\' [shutdown in 10 mins]</string>
     <string name="stop_sleep">Shutdown timer canceled</string>
     <string name="start_sleep">Shutdown timer started</string>
-    <string name="termux_permissions">permission to launch termux commands is missing!</string>
-    <string name="help_termux">Execute a command in termux\nUsage:\n termux [command]</string>
+    <string name="termux_permissions">Termux permission is missing!\nDownload modified termux:\n\"tui -download_termux\"\nSteps to set it up:\n\"tui -termux\"</string>
+    <string name="termux_file_permission">Termux needs storage permissions to work with T-UI Expert.\nType \"apps -st Termux\" and allow storage access!</string>
+    <string name="help_termux">Execute a command in termux\nUsage:\n termux [command]\nHow to set it up:\n\"tui -termux\"</string>
     <!-- various text -->
     <string name="app_name">T-UI Expert</string>
     <string name="location_off">Turn on GPS</string>
     <string name="share_label">Share</string>
-    <string name="output_about">Francesco Andreuzzi (Italy)\n\t-> Programmer
-        \n\nThanks to Luke Winward for his original idea</string>
+    <string name="output_about">Fork of T-UI by v1nc, for the community ❤️</string>
     <string name="output_refresh">Refresh: apps, alias, music, contacts, rss feeds</string>
     <string name="output_rate">Thank you!</string>
-    <string name="start_notification">T-UI started</string>
-    <string name="tui_running">T-UI is running</string>
+    <string name="start_notification">T-UI Expert started</string>
+    <string name="tui_running">T-UI Expert is running</string>
     <string name="admin_permission">Lock the screen on double tap</string>
     <string name="tui_reset">t-ui reset to default settings</string>
     <string name="copied">Copied:</string>
-    <string name="tui_busy">t-ui is busy, use \"ctrlc\" to stop the process</string>
+    <string name="tui_busy">T-UI Expert is busy, use \"ctrlc\" to stop the process</string>
     <string name="donate">Do you like my work? You can offer me a coffee (cmd: $ donate). Thank you!</string>
     <string name="open_file_chooser">Open file with...</string>
 
@@ -75,7 +75,7 @@
     <string name="output_filenotfound">File not found</string>
 
     <!-- notifications -->
-    <string name="notification_reader">T-UI notification reader</string>
+    <string name="notification_reader">T-UI Expert notification reader</string>
     <string name="no_notification_access">Unfortunately t-ui can\'t redirect you to the \"Notification access\" page of your system settings</string>
     <string name="notification_low_api">Notifications are supported on Android 4.3+ only. Use \'config -set show_notifications false\' to disable this message</string>
 
@@ -92,9 +92,7 @@
 
     <!-- hints -->
     <string-array name="hints">
-        <item name="hint_twitter">Did you know? t-ui is on Twitter. Have a look (\"$ tui -twitter\")</item>
         <item name="hint_telegram">Did you know? There\'s a Telegram group with many enthusiastic users, where you can discuss, share and chat (\"$ tui -telegram\")</item>
-        <item name="hint_googlep">Did you know? Our official Google+ community is full of tips, experimental apks and discussions (\"$ tui -googlep\")</item>
         <item name="hint_tutorial">Did you read the tutorial? (\"$ tutorial\")</item>
         <item name="hint_theme">Did you know that you can easily switch your theme? Have a look at the cmd \"$ theme\"</item>
         <item name="hint_theme2">Did you know? You can create your custom theme and share it with other users. Have a look at the cmd \"$ theme -create\"</item>
@@ -112,13 +110,13 @@
 
 
     <string-array name="tutorial">
-        <item>Welcome to T-UI Expert(｡◕‿‿◕｡) use commands:\n\'expert\': learn about all features \n\'root\': enable root commands \n\'help\': get a list of available commands</item>
+        <item>Welcome to T-UI Expert(｡◕‿‿◕｡) use commands:\n\"help\": get a list of available commands\n\"termux\": learn how to enable termux integration\n\"tui -telegram": join telegram group</item>
         <item>If you want to get info about the behavior of a command, type \"help cmdName\"</item>
         <item>Launch your apps typing their name</item>
         <item>You can call your contacts with the cmd \"call contactName\"</item>
         <item>t-ui is highly customizable. Check \"config -ls\" or use the cmd \"config -tutorial\" to see what you can change</item>
         <item>You can choose within a large database of themes uploaded by t-ui users. Check the cmd \"theme -view\"</item>
-        <item>Join our community! Google+, Twitter, Telegram and GitHub. Use the cmd \"tui\"</item>
+        <item>Join our community! Telegram and GitHub. Use the cmd \"tui\"</item>
     </string-array>
 
     <!-- apps -->
@@ -430,7 +428,7 @@
         \n-add -> create a new contact
         \n-edit [contactName] -> edit an existing contact
         \n-rm [contactName] -> remove a contact</string>
-    <string name="help_exit">Close T-UI and reset the default launcher</string>
+    <string name="help_exit">Close T-UI Expert and reset the default launcher</string>
     <string name="help_rss">-add [ID] [update_time_in_seconds] [url] -> add a new RSS feed. t-ui will try to get new contents every [update_time_in_seconds] seconds
         \n-rm [ID] -> remove this RSS feed
         \n-ls -> list your RSS feeds

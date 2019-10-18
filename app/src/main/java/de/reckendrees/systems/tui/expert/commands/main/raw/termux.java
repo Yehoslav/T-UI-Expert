@@ -55,7 +55,7 @@ public class termux implements CommandAbstraction, OnFileContentUpdate {
         }catch(java.io.IOException e){
             e.printStackTrace();
             printError(info.res.getString(R.string.termux_permissions));
-            return "";
+            return Tuils.EMPTYSTRING;
         }
         inputFile.setReadable(true);
         inputFile.setExecutable(true);
@@ -72,9 +72,10 @@ public class termux implements CommandAbstraction, OnFileContentUpdate {
                 info.context.startService(executeIntent);
             }
         }catch(SecurityException se){
-            return info.res.getString(R.string.termux_permissions);
+            printError(info.res.getString(R.string.termux_permissions));
+            return Tuils.EMPTYSTRING;
         }
-        (new getFileContentTask(this)).execute(".termux_out", ".termux_error");
+        (new getFileContentTask(this)).execute(".termux_out", ".termux_error",info.res.getString(R.string.termux_file_permission) );
         return Tuils.EMPTYSTRING;
     }
 

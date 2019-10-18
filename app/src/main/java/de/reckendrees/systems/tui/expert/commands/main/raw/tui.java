@@ -47,6 +47,20 @@ public class tui extends ParamCommand {
                 return null;
             }
         },
+        termux {
+            @Override
+            public String exec(ExecutePack pack) {
+                pack.context.startActivity(Tuils.webPage("https://github.com/v1nc/TUI-Expert/wiki/Termux-integration"));
+                return null;
+            }
+        },
+        download_termux {
+            @Override
+            public String exec(ExecutePack pack) {
+                pack.context.startActivity(Tuils.webPage("https://github.com/v1nc/termux-app/releases/latest"));
+                return null;
+            }
+        },
         about {
             @Override
             public String exec(ExecutePack pack) {
@@ -101,28 +115,28 @@ public class tui extends ParamCommand {
         telegram {
             @Override
             public String exec(ExecutePack pack) {
-                pack.context.startActivity(Tuils.webPage("https://t.me/tuilauncher"));
+                pack.context.startActivity(Tuils.webPage("https://t.me/t_ui_dev"));
                 return null;
             }
         },
         googlep {
             @Override
             public String exec(ExecutePack pack) {
-                pack.context.startActivity(Tuils.webPage("https://plus.google.com/communities/103936578623101446195"));
+                pack.context.startActivity(Tuils.webPage("https://t.me/s/NoGoolag"));
                 return null;
             }
         },
         twitter {
             @Override
             public String exec(ExecutePack pack) {
-                pack.context.startActivity(Tuils.webPage("https://twitter.com/tui_launcher"));
+                pack.context.startActivity(Tuils.webPage("https://notwitter.com/"));
                 return null;
             }
         },
         sourcecode {
             @Override
             public String exec(ExecutePack pack) {
-                pack.context.startActivity(Tuils.webPage("https://github.com/Andre1299/TUI-ConsoleLauncher"));
+                pack.context.startActivity(Tuils.webPage("https://github.com/v1nc/TUI-Expert"));
                 return null;
             }
         },

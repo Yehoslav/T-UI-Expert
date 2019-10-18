@@ -32,7 +32,7 @@ public class ChangelogManager {
 
     public static void printLog(final Context context, final OkHttpClient client, final boolean force) {
 
-        final String originalUrl = "https://pastebin.com/n5AYHd26";
+        final String originalUrl = "https://pastebin.com/cNfLYnJW";
         String url;
         if(!originalUrl.contains("raw")) {
             url = originalUrl.replace(".com/", ".com/raw/");

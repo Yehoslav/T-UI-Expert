@@ -34,7 +34,7 @@ public class getFileContentTask extends AsyncTask<String, Integer, String> {
                 fileContent = readFile(commands[0]);
 
                 if(fileContent.equals("tui_termux_error")){
-                    onFileContentUpdate.printError("Termux needs file permissions to work with TUI Expert. Please use 'apps -st Termux' and set file permissions.");
+                    onFileContentUpdate.printError(commands[2]);
                     return "";
                 }else{
                     if (fileContent.length()> currentLength){
