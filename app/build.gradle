@@ -44,7 +44,7 @@ android {
         def formattedDate = new Date().format('hh.mm')
 
         variant.outputs.all {
-            outputFileName = "../../../update.apk"
+            outputFileName = "./${variant.versionName}/${variant.applicationId}_${variant.getFlavorName()}_${variant.versionCode}_${formattedDate}.apk"
         }
     }
 }

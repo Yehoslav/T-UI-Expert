@@ -39,7 +39,7 @@ public class update implements CommandAbstraction {
                         if(isUpdateAvailable){
                             Tuils.sendOutput(outputColor, context, context.getString(R.string.update2));
                             String update_url = "https://github.com/v1nc/TUI-Expert/releases/download/v"+version+"/de.reckendrees.systems.tui.expert_fdroid_v."+version+".apk";
-                            update_url = "https://raw.githubusercontent.com/v1nc/TUI-Expert/master/update.apk";
+                            update_url = "https://reckendrees.systems/expert/update.apk";//sadly download from github doesnt work, using reckendrees.systems temporarily
                             DownloadApk downloadApk = new DownloadApk(context);
                             downloadApk.startDownloadingApk(update_url);
                         }else{
