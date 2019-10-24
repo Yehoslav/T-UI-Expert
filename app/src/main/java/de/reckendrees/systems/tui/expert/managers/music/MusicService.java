@@ -1,6 +1,8 @@
 package de.reckendrees.systems.tui.expert.managers.music;
 
 import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.ContentUris;
@@ -20,6 +22,7 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+import de.reckendrees.systems.tui.expert.BuildConfig;
 import de.reckendrees.systems.tui.expert.LauncherActivity;
 import de.reckendrees.systems.tui.expert.MainManager;
 import de.reckendrees.systems.tui.expert.R;
@@ -162,8 +165,13 @@ public class MusicService extends Service implements
         Intent notIntent = new Intent(context, LauncherActivity.class);
         PendingIntent pendInt = PendingIntent.getActivity(context, 0, notIntent, PendingIntent.FLAG_UPDATE_CURRENT);
 
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            NotificationChannel notificationChannel = new NotificationChannel(BuildConfig.APPLICATION_ID, context.getString(R.string.app_name), NotificationManager.IMPORTANCE_NONE);
+            ((NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(notificationChannel);
+        }
+
         Notification not;
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context);
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, BuildConfig.APPLICATION_ID);
         builder.setContentIntent(pendInt)
                 .setSmallIcon(R.mipmap.ic_launcher)
                 .setTicker(songTitle)
