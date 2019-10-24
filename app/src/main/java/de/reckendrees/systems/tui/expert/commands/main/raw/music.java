@@ -64,19 +64,6 @@ public class music extends ParamCommand {
                 return pack.context.getString(R.string.output_playing) + Tuils.SPACE + title;
             }
         },
-        stop {
-
-            @Override
-            public String exec(ExecutePack pack) {
-                if(((MainPack) pack).player == null) {
-                    execute("CLOSE");
-                    return null;
-                }
-
-                ((MainPack) pack).player.stop();
-                return null;
-            }
-        },
         select {
             @Override
             public int[] args() {

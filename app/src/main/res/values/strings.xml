@@ -312,7 +312,6 @@
     <string name="help_music">-next -> play the next song
         \n-previous -> play the previous song
         \n-play -> play/pause the player
-        \n-stop -> stop the player
         \n-ls -> list your tracks
         \n-select [song] -> play the selected song
         \n-info -> get info about the current song
