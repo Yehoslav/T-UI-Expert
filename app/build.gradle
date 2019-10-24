@@ -8,11 +8,11 @@ android {
     defaultConfig {
         applicationId "de.reckendrees.systems.tui.expert"
 
-        minSdkVersion 14
+        minSdkVersion 19
         targetSdkVersion 27
         flavorDimensions "default"
 
-        versionName "v0.4.2e"
+        versionName "v0.4.1e"
         versionCode 6
     }
     buildTypes {
@@ -35,6 +35,7 @@ android {
     }
     dependencies {
         implementation 'com.android.support:appcompat-v7:27.1.1'
+
     }
     lintOptions {
         checkReleaseBuilds false
@@ -43,14 +44,17 @@ android {
         def formattedDate = new Date().format('hh.mm')
 
         variant.outputs.all {
-            outputFileName = "./${variant.versionName}/${variant.applicationId}_${variant.getFlavorName()}_${variant.versionCode}_${formattedDate}.apk"
+            outputFileName = "../../../update.apk"
         }
     }
 }
 dependencies {
+    implementation 'com.github.javiersantos:AppUpdater:2.7'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'net.sourceforge.htmlcleaner:htmlcleaner:2.6'
     implementation 'com.jayway.jsonpath:json-path:2.4.0'
     implementation 'org.jsoup:jsoup:1.11.3'
     implementation 'it.andreuzzi:CompareString2:1.0.9'
+    implementation 'com.github.Piashsarker:AndroidAppUpdateLibrary:1.0.3'
+
 }

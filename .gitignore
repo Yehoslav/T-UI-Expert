@@ -6,6 +6,7 @@
 *.war
 *.ear
 *.apk
+!update.apk
 bin/
 bin
 gen/

@@ -22,6 +22,10 @@
     <string name="termux_permissions">Termux permission is missing!\nDownload modified termux:\n\"tui -download_termux\"\nSteps to set it up:\n\"tui -termux\"</string>
     <string name="termux_file_permission">Termux needs storage permissions to work with T-UI Expert.\nType \"apps -st Termux\" and allow storage access!</string>
     <string name="help_termux">Execute a command in termux\nUsage:\n termux [command]\nHow to set it up:\n\"tui -termux\"</string>
+    <string name="update1">searching for updates...</string>
+    <string name="update2">a new update is available!</string>
+    <string name="update3">your version is the latest!</string>
+    <string name="update4">can not check for updates. please try again later!</string>
     <!-- various text -->
     <string name="app_name">T-UI Expert</string>
     <string name="location_off">Turn on GPS</string>

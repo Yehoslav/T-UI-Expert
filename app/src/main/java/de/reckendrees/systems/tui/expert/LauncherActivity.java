@@ -25,6 +25,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Toast;
 
+import com.github.javiersantos.appupdater.AppUpdater;
+import com.github.javiersantos.appupdater.enums.UpdateFrom;
+
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;

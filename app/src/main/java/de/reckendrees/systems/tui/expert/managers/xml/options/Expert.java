@@ -53,7 +53,7 @@ public enum Expert implements XMLPrefsSave {
     custom_command{
         @Override
         public String defaultValue() {
-            return "curl -s http://wttr.in/dortmund\\?0T\\&lang=de";
+            return " echo use config -set custom_command [command]    for example: curl -s http://wttr.in/dortmund\\?0T\\&lang=de";
         }
 
         @Override
