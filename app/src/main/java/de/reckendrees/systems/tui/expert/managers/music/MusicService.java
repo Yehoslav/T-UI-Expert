@@ -112,7 +112,9 @@ public class MusicService extends Service implements
 //            no need to log this error, as this will occur everytime
             Tuils.log(e);
         }
-
+        if(songs.size()== 0){
+            return null;
+        }
         Song playSong = songs.get(songPosn);
 
         long id = playSong.getID();
