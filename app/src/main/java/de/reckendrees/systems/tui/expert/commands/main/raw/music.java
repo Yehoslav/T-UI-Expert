@@ -27,6 +27,20 @@ public class music extends ParamCommand {
                 return null;
             }
         },
+        kill {
+
+            @Override
+            public String exec(ExecutePack pack) {
+                if(((MainPack) pack).player == null) {
+                    execute("CLOSE");
+                    return null;
+                }
+
+                ((MainPack) pack).player.stop();
+
+                return null;
+            }
+        },
         previous {
 
             @Override
@@ -54,14 +68,19 @@ public class music extends ParamCommand {
 
             @Override
             public String exec(ExecutePack pack) {
-                if(((MainPack) pack).player == null) {
-                    execute("PLAY_PAUSE");
-                    return null;
+                try{
+                    if(((MainPack) pack).player == null) {
+                        execute("PLAY_PAUSE");
+                        return null;
+                    }
+
+                    String title = ((MainPack) pack).player.play();
+                    if(title == null) return null;
+                    return pack.context.getString(R.string.output_playing) + Tuils.SPACE + title;
+                }catch(Exception e){
+                    return pack.context.getString(R.string.player_stopped);
                 }
 
-                String title = ((MainPack) pack).player.play();
-                if(title == null) return null;
-                return pack.context.getString(R.string.output_playing) + Tuils.SPACE + title;
             }
         },
         select {

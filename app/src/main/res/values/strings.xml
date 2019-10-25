@@ -22,10 +22,10 @@
     <string name="termux_permissions">Termux permission is missing!\nDownload modified termux:\n\"tui -download_termux\"\nSteps to set it up:\n\"tui -termux\"</string>
     <string name="termux_file_permission">Termux needs storage permissions to work with T-UI Expert.\nType \"apps -st Termux\" and allow storage access!</string>
     <string name="help_termux">Execute a command in termux\nUsage:\n termux [command]\nHow to set it up:\n\"tui -termux\"</string>
-    <string name="update1">searching for updates...</string>
-    <string name="update2">a new update is available!</string>
-    <string name="update3">your version is the latest!</string>
-    <string name="update4">can not check for updates. please try again later!</string>
+    <string name="update1">Searching for updates...</string>
+    <string name="update2">A new update is available!</string>
+    <string name="update3">T-UI Expert is up to date!</string>
+    <string name="update4">Can not check for updates. Please try again later!</string>
     <!-- various text -->
     <string name="app_name">T-UI Expert</string>
     <string name="location_off">Turn on GPS</string>
@@ -41,6 +41,7 @@
     <string name="tui_busy">T-UI Expert is busy, use \"ctrlc\" to stop the process</string>
     <string name="donate">Do you like my work? You can offer me a coffee (cmd: $ donate). Thank you!</string>
     <string name="open_file_chooser">Open file with...</string>
+    <string name="player_stopped">Player was killed. Please restart T-UI Expert to use it again!</string>
 
     <!-- weather -->
     <string name="weather_cant_update">You can\'t perform a manual update with the default key. You have to create a custom key on the website</string>
@@ -312,6 +313,7 @@
     <string name="help_music">-next -> play the next song
         \n-previous -> play the previous song
         \n-play -> play/pause the player
+        \n-kill -> stop player
         \n-ls -> list your tracks
         \n-select [song] -> play the selected song
         \n-info -> get info about the current song
