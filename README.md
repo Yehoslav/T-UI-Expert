@@ -4,7 +4,7 @@ Telegram:
 * [discussion group](https://t.me/t_ui_dev)
 * [update channel](https://t.me/tui_expert_updates)
 
-<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/1.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
+<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/screenshot.png" data-canonical-src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/screenshot.png" width="400" />
 
 
 
