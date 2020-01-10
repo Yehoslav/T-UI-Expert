@@ -1,12 +1,9 @@
 # T-UI Expert
+<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" data-canonical-src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" width="400" />
 
 Telegram:
 * [discussion group](https://t.me/t_ui_dev)
 * [update channel](https://t.me/tui_expert_updates)
-
-<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" data-canonical-src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" width="400" />
-
-
 
 # [Download](https://github.com/v1nc/TUI-Expert/releases)
 (dont expect stable until v1.0!)
