@@ -3,8 +3,13 @@ package de.reckendrees.systems.tui.expert.managers;
 import android.app.Activity;
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.IBinder;
+import android.support.v4.content.ContextCompat;
 import android.text.InputType;
 import android.text.Layout;
 import android.text.Spannable;
@@ -25,6 +30,7 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
+import de.reckendrees.systems.tui.expert.R;
 import de.reckendrees.systems.tui.expert.commands.main.MainPack;
 import de.reckendrees.systems.tui.expert.managers.xml.XMLPrefsManager;
 import de.reckendrees.systems.tui.expert.managers.xml.options.Behavior;
@@ -278,7 +284,6 @@ public class TerminalManager {
 //            }});
 //        }
     }
-
     private void setupNewInput() {
         mInputView.setText(Tuils.EMPTYSTRING);
 

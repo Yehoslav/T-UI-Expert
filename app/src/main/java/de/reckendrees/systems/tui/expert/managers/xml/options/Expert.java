@@ -28,6 +28,17 @@ public enum Expert implements XMLPrefsSave {
             return "Show call button";
         }
     },
+    show_exit{
+        @Override
+        public String defaultValue() {
+            return "true";
+        }
+
+        @Override
+        public String info() {
+            return "Show exit button";
+        }
+    },
     use_root{
         @Override
         public String defaultValue() {

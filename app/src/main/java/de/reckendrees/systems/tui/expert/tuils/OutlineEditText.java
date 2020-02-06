@@ -3,6 +3,11 @@ package de.reckendrees.systems.tui.expert.tuils;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.widget.TextView;
+
+import java.lang.reflect.Field;
+
+import de.reckendrees.systems.tui.expert.R;
 
 public class OutlineEditText extends android.support.v7.widget.AppCompatEditText {
 
@@ -10,6 +15,7 @@ public class OutlineEditText extends android.support.v7.widget.AppCompatEditText
 
     public OutlineEditText(Context context) {
         super(context);
+
     }
 
     public OutlineEditText(Context context, AttributeSet attrs) {
@@ -18,6 +24,7 @@ public class OutlineEditText extends android.support.v7.widget.AppCompatEditText
 
     public OutlineEditText(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+
     }
 
     @Override
