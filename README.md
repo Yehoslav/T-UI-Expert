@@ -1,12 +1,9 @@
 # T-UI Expert
+<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" data-canonical-src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" width="400" />
 
 Telegram:
-* [discussion group](https://t.me/t_ui_dev)
+* [discussion group](https://t.me/tui_expert)
 * [update channel](https://t.me/tui_expert_updates)
-
-<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/1.png" data-canonical-src="https://gyazo.com/eb5c5741b6a9a16c692170a41a49c858.png" width="400" />
-
-
 
 # [Download](https://github.com/v1nc/TUI-Expert/releases)
 (dont expect stable until v1.0!)
@@ -19,6 +16,9 @@ Telegram:
 * airplane mode works again
 * tap to lock does not disable fingerprint anymore
 # Features
+
+### [Termux integration](https://github.com/v1nc/TUI-Expert/wiki/Termux-integration)
+
 ### Root commands:
 * `airplane`   toggle airplane mode
 * `battery`    toggle battery saver mode
@@ -29,13 +29,13 @@ Telegram:
 * `rotate`     toggle rotating screen
 * `shutdown`   power off your phone
 * `sleeptimer` after given minutes, your phone shuts down
-### custom command output:
+### Custom command output:
 your command is executed periodically, the output is printed to the top of the terminal!
 - `config -set custom_command wget -qO- wttr.in/your_city_name\?0T`
 - `config -set custom_command_timeout 60`(refresh every 60s)
 
-### kill command:
-instantly close apps by, just type kill!
+### Kill command:
+instantly close apps, just type kill!
 
 ### More Settings:
 * `numbering_notes` [true/false]: notes are numbered automatically
