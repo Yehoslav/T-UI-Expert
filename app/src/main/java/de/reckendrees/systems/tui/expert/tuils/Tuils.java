@@ -296,7 +296,12 @@ public class Tuils {
     }
 
     public static void unregisterBatteryReceiver(Context context) {
-        if(batteryReceiver != null) context.unregisterReceiver(batteryReceiver);
+        try{//sometimes batteryReceiver!=null, but reciever is not registered!
+            if(batteryReceiver != null) context.unregisterReceiver(batteryReceiver);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
     }
 
     public static boolean containsExtension(String[] array, String value) {

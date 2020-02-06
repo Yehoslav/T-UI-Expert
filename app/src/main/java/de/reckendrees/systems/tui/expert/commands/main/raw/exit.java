@@ -34,7 +34,6 @@ public class exit implements CommandAbstraction, HideableCommand {
         }
 
         if(password.length() > 0 && !inputPassword.equals(password)){
-            //eturn inputPassword + " - " + password;
             wrongPassword(pack);
         }else{
             Tuils.resetPreferredLauncherAndOpenChooser(pack.context);
