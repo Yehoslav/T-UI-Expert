@@ -39,6 +39,17 @@ public enum Expert implements XMLPrefsSave {
             return "Show exit button";
         }
     },
+    exit_password{
+        @Override
+        public String defaultValue() {
+            return "";
+        }
+
+        @Override
+        public String info() {
+            return "Password for exit command";
+        }
+    },
     use_root{
         @Override
         public String defaultValue() {

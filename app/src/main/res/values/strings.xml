@@ -26,6 +26,7 @@
     <string name="update2">A new update is available!</string>
     <string name="update3">T-UI Expert is up to date!</string>
     <string name="update4">Can not check for updates. Please try again later!</string>
+    <string name="wrong_password">Wrong password! Try again.</string>
     <!-- various text -->
     <string name="app_name">T-UI Expert</string>
     <string name="location_off">Turn on GPS</string>
