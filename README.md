@@ -10,11 +10,14 @@ Telegram:
 
 # Fixes:
 * hotfix for double(or more) notifications
+* prevent crash caused by the battery reciever
+* (transparent) cursor color works again
 
 ## Fixes for root:
 * make wifi cmd more reliable
 * airplane mode works again
 * tap to lock does not disable fingerprint anymore
+
 # Features
 
 ### [Termux integration](https://github.com/v1nc/TUI-Expert/wiki/Termux-integration)
@@ -39,6 +42,8 @@ instantly close apps, just type kill!
 
 ### More Settings:
 * `numbering_notes` [true/false]: notes are numbered automatically
-* `show_help` [true/false]: show/hide help button
-* `show_call` [true/false]: show/hide call button
+* `show_help` [true/false]: show/hide help command
+* `show_call` [true/false]: show/hide call command
+* `show_exit` [true/false]: show/hide exit command
+* `exit_password` [string]: exit command asks for a password if specified
 * `user_root` [true/false]: always use root if possible
