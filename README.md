@@ -1,12 +1,19 @@
-# T-UI Expert
-<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" data-canonical-src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" width="400" />
+# T-UI Expert [archived]
+
+This repository is archived! T-UI Expert features will be merged into orginal T-UI.
+Please use the next T-UI version!
+
+The successor of T-UI Expert is called [TEL](https://t-e-l.github.io/), a termux based launcher.
 
 Telegram:
-* [discussion group](https://t.me/tui_expert)
-* [update channel](https://t.me/tui_expert_updates)
+* [discussion group](https://t.me/termux_expert_launcher)
+* [update channel](https://t.me/tel_updates)
+* [theme from the screenshot](https://t.me/T_uiThemes/50)
 
-# [Download](https://github.com/v1nc/TUI-Expert/releases)
-(dont expect stable until v1.0!)
+<img src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" data-canonical-src="https://github.com/v1nc/TUI-Expert/raw/master/screenshots/green_sea.png" width="400" />
+
+
+
 
 # Fixes:
 * hotfix for double(or more) notifications
