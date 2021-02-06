@@ -9,6 +9,7 @@ import java.io.InputStreamReader;
 
 import de.reckendrees.systems.tui.expert.tuils.interfaces.OnCommandUpdate;
 
+
 public class getCommandOutputTask extends AsyncTask<String, Integer, String> {
 
     private Runnable runnable;

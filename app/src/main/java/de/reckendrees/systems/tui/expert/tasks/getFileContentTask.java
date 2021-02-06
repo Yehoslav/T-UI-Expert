@@ -66,7 +66,7 @@ public class getFileContentTask extends AsyncTask<String, Integer, String> {
                 onFileContentUpdate.printError(line);
             }
         }catch(Exception e){
-            Log.d("TUIE ", "no error:)");
+            Log.d("TUI-E ", "no error:)");
         }
 
         Log.d("TUI-E endWhile",fileContent);
