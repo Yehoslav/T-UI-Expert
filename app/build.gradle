@@ -10,7 +10,7 @@ android {
         targetSdkVersion 33
         flavorDimensions.add("default")
 
-        versionName "v0.4.4f"
+        versionName "v0.4.50"
         versionCode 8
     }
     buildTypes {

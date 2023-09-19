@@ -879,7 +879,7 @@ public class SuggestionsManager {
 
         String temp = rmQuotes.matcher(afterLastSeparator).replaceAll(Tuils.EMPTYSTRING);
 
-        int counter = quickCompare(temp, files, suggestions, beforeLastSpace, suggestionsPerCategory, false, Suggestion.TYPE_FILE, false);
+        int counter = quickCompare(temp, files, suggestions, beforeLastSpace, suggestionsPerCategory, false, Suggestion.TYPE_FILE, afterLastSpaceWithoutALS);
         if(suggestionsPerCategory - counter <= 0) return;
 
         String[] fs = CompareStrings.topMatchesWithDeadline(temp, files, suggestionsPerCategory - counter, suggestionsDeadline, FILE_SPLITTERS, algInstance, alg);
