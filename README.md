@@ -1,7 +1,15 @@
-# T-UI Expert [archived]
+# T-UI Expert Community Edition
 
-This repository is archived! T-UI Expert features will be merged into orginal T-UI.
-Please use the next T-UI version!
+
+> The TUI Console Launcher is a versatile android Launcher, which sadly was
+> abandoned by it's creator ([Francesco Andreuzzi](https://github.com/fandreuz)),
+> and later by [v1nc](https://github.com/v1nc).
+> Since relying on one maintainer proved to not be sustainably I believe we
+> should try to maintain it as a community.  Hence, this is the first step
+> into making TUI maintenance a community effort, to hopefully keep the
+> project relevant for a longer period. I am not a developer, nor do I have
+> any meaningful experience in the field, so if you have an advice or want to
+> join the effort I'll be very grateful.
 
 
 Telegram:
