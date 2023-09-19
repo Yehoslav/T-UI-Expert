@@ -41,6 +41,7 @@ import de.reckendrees.systems.tui.expert.tuils.LongClickableSpan;
 import de.reckendrees.systems.tui.expert.tuils.PrivateIOReceiver;
 import de.reckendrees.systems.tui.expert.tuils.Tuils;
 import de.reckendrees.systems.tui.expert.tuils.interfaces.CommandExecuter;
+import java.util.Objects;
 
 /*Copyright Francesco Andreuzzi
 
@@ -78,6 +79,9 @@ public class TerminalManager {
     private boolean suMode;
 
     private List<String> cmdList = new ArrayList<>(CMD_LIST_SIZE);
+    private List<String> filteredCmdList = new ArrayList<>(CMD_LIST_SIZE);
+    private String cmdSearchQuerry;
+    private String lastInsertedInput;
     private int howBack = -1;
 
     private Runnable mScrollRunnable = new Runnable() {
@@ -371,28 +375,49 @@ public class TerminalManager {
     }
 
     public void onBackPressed() {
-        if(cmdList.size() > 0) {
+        if(!cmdList.isEmpty()) {
+            String currentInput = getInput();
+
+            if (Objects.equals(currentInput, Tuils.EMPTYSTRING) ) {
+                filteredCmdList = cmdList;
+                cmdSearchQuerry = Tuils.EMPTYSTRING;
+            } else if ( !Objects.equals(currentInput, lastInsertedInput)) {
+                cmdSearchQuerry = currentInput;
+                filteredCmdList.clear();
+                for (String cmd : cmdList ) {
+                    // TODO: Set a flag for case insensitive search
+                    if (cmd.startsWith(currentInput)) {
+                        filteredCmdList.add(cmd);
+                    }
+                }
+            }
+
+            if (filteredCmdList.isEmpty()) {
+                return;
+            }
 
             if(howBack == -1) {
-                howBack = cmdList.size();
+                howBack = filteredCmdList.size();
             } else if(howBack == 0) {
                 return;
             }
             howBack--;
 
-            setInput(cmdList.get(howBack));
+            lastInsertedInput = filteredCmdList.get(howBack);
+            setInput(lastInsertedInput);
         }
     }
 
     public void onNextPressed() {
-        if(howBack != -1 && howBack < cmdList.size()) {
+        if(howBack != -1 && howBack < filteredCmdList.size()) {
             howBack++;
 
             String input;
-            if(howBack == cmdList.size()) {
-                input = Tuils.EMPTYSTRING;
+            if(howBack == filteredCmdList.size()) {
+                input = cmdSearchQuerry;
             } else {
-                input = cmdList.get(howBack);
+                input = filteredCmdList.get(howBack);
+                lastInsertedInput = input;
             }
 
             setInput(input);
