@@ -29,6 +29,7 @@ import android.widget.TextView;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import de.reckendrees.systems.tui.expert.R;
 import de.reckendrees.systems.tui.expert.commands.main.MainPack;
