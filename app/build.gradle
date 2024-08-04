@@ -1,16 +1,18 @@
 apply plugin: 'com.android.application'
 android {
-    compileSdk 33
-    namespace 'de.reckendrees.systems.tui.expert'
+    compileSdkVersion 27
+    buildToolsVersion '28.0.3'
+    dexOptions {
+    }
 
     defaultConfig {
         applicationId "de.reckendrees.systems.tui.expert"
 
         minSdkVersion 19
-        targetSdkVersion 33
-        flavorDimensions.add("default")
+        targetSdkVersion 27
+        flavorDimensions "default"
 
-        versionName "v0.4.50"
+        versionName "v0.4.4f"
         versionCode 8
     }
     buildTypes {
@@ -18,6 +20,7 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
         }
     }
     productFlavors {
@@ -34,15 +37,14 @@ android {
         implementation 'com.android.support:appcompat-v7:27.1.1'
 
     }
-    lint {
+    lintOptions {
         checkReleaseBuilds false
     }
-    android.applicationVariants.configureEach { variant ->
+    android.applicationVariants.all { variant ->
         def formattedDate = new Date().format('hh.mm')
 
-        variant.outputs.configureEach { output ->
-            def fileName = "./${variant.versionName}/${variant.applicationId}_${variant.getFlavorName()}_${variant.versionCode}_${formattedDate}.apk"
-            outputFileName = new File(output.outputFile.parent, fileName).getName()
+        variant.outputs.all {
+            outputFileName = "./${variant.versionName}/${variant.applicationId}_${variant.getFlavorName()}_${variant.versionCode}_${formattedDate}.apk"
         }
     }
 }
